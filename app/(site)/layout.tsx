@@ -19,21 +19,21 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
     const [site, setSite] = useState<Site | null>(null);
     const [isMounted, setIsMounted] = useState(false)
     const { domainName } = useParams<{ domainName: string }>();
-
-    async function getSite() {
-        const response = await fetch(`/api/sites/${domainName}`);
-        const data = await response.json();
-        if (!data?.site) {
-            notFound();
-        }
-        setSite(data.site);
-    }
     
     useEffect(() => {
         setIsMounted(true)
     }, [])
 
     useEffect(() => {
+        async function getSite() {
+            const response = await fetch(`/api/sites/${domainName}`);
+            const data = await response.json();
+            if (!data?.site) {
+                notFound();
+            }
+            setSite(data.site);
+        }
+        
         getSite();
     }, [domainName]);
 

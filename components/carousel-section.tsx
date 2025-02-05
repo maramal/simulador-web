@@ -3,7 +3,7 @@
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { services } from "@/app/(site)/[domainName]/servicios/page";
+import { services } from "@/lib/services";
 
 const CarouselSection: React.FC = () => {
     // Inicializamos Embla con autoplay y loop infinito
