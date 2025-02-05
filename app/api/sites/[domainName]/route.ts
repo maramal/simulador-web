@@ -1,8 +1,8 @@
 import prisma from "@/lib/prisma";
-import { NextApiRequest } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
-    req: NextApiRequest, 
+    req: NextRequest, 
     { 
         params 
     }: {
@@ -16,5 +16,5 @@ export async function GET(
         }
     })
 
-    return Response.json({ site })
+    return NextResponse.json({ site })
 }
