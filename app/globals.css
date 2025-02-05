@@ -2,20 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.image-placeholder {
+  background: linear-gradient(135deg, #FF6B6B, #FFD93D, #6BCB77);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Animación para el gradiente */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

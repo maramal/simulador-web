@@ -1,0 +1,60 @@
+<svg
+  width="200"
+  height="80"
+  viewBox="0 0 200 80"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-labelledby="late-icon-title"
+  role="img"
+>
+  <title id="late-icon-title">LATE</title>
+
+  <defs>
+    <!-- Gradiente lineal de rojo a naranja -->
+    <linearGradient id="lateGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF0000" />
+      <stop offset="100%" stop-color="#FFA500" />
+
+      <!-- Animación que “mueve” el gradiente de izq. a der. y regresa -->
+      <animate
+        attributeName="x1"
+        values="0%;100%;0%"
+        dur="5s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="x2"
+        values="100%;200%;100%"
+        dur="5s"
+        repeatCount="indefinite"
+      />
+    </linearGradient>
+  </defs>
+
+  <!-- Texto LATE -->
+  <text
+    x="50%"
+    y="50%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-size="48"
+    font-family="Arial, sans-serif"
+    font-weight="bold"
+    fill="url(#lateGradient)"
+    transform-box="fill-box"
+    transform-origin="center"
+  >
+    LATE
+
+    <!-- Animación de doble latido con pausa posterior -->
+    <!-- Se usan 6 valores y 6 keyTimes para que funcione correctamente -->
+    <animateTransform
+      attributeName="transform"
+      type="scale"
+      values="1;1.1;1;1.1;1;1"
+      keyTimes="0;0.1;0.2;0.3;0.4;1"
+      dur="3s"
+      repeatCount="indefinite"
+    />
+  </text>
+</svg>
